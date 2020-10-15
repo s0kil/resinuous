@@ -3,6 +3,10 @@
 
 open Belt
 
+let observable = a => {
+  a
+}
+
 let render: string => unit = %raw(
   `(htmlString) => document.body.insertAdjacentHTML("beforeend", htmlString)`
 )

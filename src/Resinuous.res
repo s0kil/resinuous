@@ -7,13 +7,17 @@ let render: string => unit = %raw(
   `(htmlString) => document.body.insertAdjacentHTML("beforeend", htmlString)`
 )
 
-let renderFragment = htmlList => {
-  let htmlString = htmlList->List.reduce("", (a, b) => a ++ b)
+let foldJsx = jsxList => {
+  jsxList->List.reduce("", (a, b) => a ++ b)
+}
+
+let renderFragment = jsxList => {
+  let htmlString = foldJsx(jsxList)
   render(htmlString)
 }
 
 let jsxToHtml = (tagName, ~children: list<string>, ()) => {
-  let c = children->List.reduce("", (a, b) => a ++ b)
+  let c = foldJsx(children)
   j`<$tagName>$c</$tagName>`
 }
 

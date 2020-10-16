@@ -5,7 +5,8 @@
     "build": "bsb -make-world && parcel build index.html",
     "clean": "bsb -clean-world",
     "start": "bsb -make-world -w",
-    "index": "parcel index.html"
+    "index": "parcel index.html",
+    "serve": "python3 -m http.server --directory dist/ 1234"
   },
   "devDependencies": {
     "@babel/core": "^7.12.1",

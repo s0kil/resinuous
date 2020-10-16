@@ -1,8 +1,5 @@
 open Resinuous
 
-type counter = {
-  count: int
-}
 let count = observable(0)
 
 let headerView =
@@ -20,7 +17,7 @@ let mainView =
         "Welcome!"
       </div>
       <div>
-        (j`Count Is: $count`)
+        ("Count Is: " ++ Int.toString(count(.)))
       </div>
     </main>
   </>

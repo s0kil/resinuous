@@ -1,11 +1,7 @@
 // Parcel HMR
 %%raw(`if (module.hot) { module.hot.accept() }`)
 
-open Belt
-
-let observable = a => {
-  a
-}
+include Sinuous
 
 let render: string => unit = %raw(
   `(htmlString) => document.body.insertAdjacentHTML("beforeend", htmlString)`
